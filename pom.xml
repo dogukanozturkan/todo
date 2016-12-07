@@ -15,7 +15,7 @@
     </parent>
 
     <properties>
-        <!--<start-class>com.loan.Application</start-class> -->
+        <start-class>com.iyzico.Application</start-class>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>

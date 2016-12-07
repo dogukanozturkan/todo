@@ -13,7 +13,7 @@ public class JerseyConfig extends ResourceConfig {
 
     public JerseyConfig() {
         register(RequestContextFilter.class);
-        packages("com.loan.rest");
+        packages("com.iyzico.controller");
         register(LoggingFilter.class);
         register(CORSResponseFilter.class);
     }

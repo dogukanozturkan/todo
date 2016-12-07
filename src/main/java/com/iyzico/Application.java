@@ -20,7 +20,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableAutoConfiguration
-@ComponentScan(basePackages= {"com.loan"})
+@ComponentScan(basePackages= {"com.iyzico"})
 public class Application {
 
     public static void main(String[] args) throws Exception {
