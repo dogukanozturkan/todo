@@ -2,7 +2,7 @@
 
 # before running project to ensure run these commands
 
-``` mvn clean generate-source ```
+``` mvn clean generate-sources ```
 
 ``` mvn clean install ```
 
