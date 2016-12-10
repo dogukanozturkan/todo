@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>User Registration</title>
+
+  <link rel="stylesheet" type="text/css" media="all" th:href="@{/assets/css/style.css}"/>
+  <link rel="stylesheet" type="text/css" media="all" th:href="@{/assets/css/bootstrap.min.css}"/>
+  <link rel="stylesheet" type="text/css" media="all" th:href="@{/assets/css/normalize.min.css}"/>
+
+</head>
+<body>
+<div class="container">
+  <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2"
+       ng-show="loginBox">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <div class="panel-title">Sign Up</div>
+        <div style="float:right; font-size: 80%; position: relative; top:-10px"></div>
+      </div>
+      <div style="padding-top:30px" class="panel-body">
+
+        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+        <form role="form" name="register" id="contact-form" th:action="@{/register}" modelAttribute="user" th:object="${user}" method="POST" enctype="utf8">
+
+
+          <div style="margin-bottom: 25px" class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input type="text" class="form-control" th:field="*{firstName}" th:type="text" name="firstName" id="firstName" placeholder="Enter first name"/>
+          </div>
+
+          <div style="margin-bottom: 25px" class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input type="text" class="form-control" th:field="*{lastName}" th:type="text" name="lastName" id="lastName" placeholder="Enter last name"/>
+          </div>
+
+          <div style="margin-bottom: 25px" class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            <input type="email" class="form-control" th:field="*{email}" th:type="email" id="emailAddress" name="emailAddress" placeholder="Enter email"/>
+          </div>
+
+          <div style="margin-bottom: 25px" class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input type="password" class="form-control" th:field="*{password}" th:type="password" name="password" id="password"
+                   placeholder="Enter password"/>
+          </div>
+
+          <div style="margin-top:10px" class="form-group">
+            <!-- Button -->
+            <div class="form-group">
+              <!-- Button -->
+              <div class="col-md-offset-3 col-md-9">
+                <button id="btn-signin" type="submit" class="btn btn-info" ng-model="submitButton"><i
+                    class="icon-hand-right"></i> &nbsp; Submit
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-12 control">
+              <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                If You have an account!
+                <a href="login">
+                  Sign In Here
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
