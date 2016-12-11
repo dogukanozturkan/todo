@@ -31,7 +31,7 @@ public class UserController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
-    private UserService service;
+    private UserService userService;
 
     @RequestMapping("/") String index() {
         return "userLogin";
@@ -48,8 +48,7 @@ public class UserController {
         return "userRegister";
     }
 
-    protected static final String ERROR_CODE_EMAIL_EXIST = "NotExist.user.email";
-    protected static final String MODEL_NAME_REGISTRATION_DTO = "user";
+
     protected static final String VIEW_NAME_REGISTRATION_PAGE = "userRegister";
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
@@ -65,7 +64,7 @@ public class UserController {
 
         LOGGER.info("No validation errors found. Continuing registration process.");
 
-        service.register(userAccountData);
+        userService.register(userAccountData);
 
         LOGGER.info(String.format("User %s has been signed in",userAccountData.getEmail()));
 
